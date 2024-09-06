@@ -1,0 +1,13 @@
+{
+  "header": {
+    "title": "Unlimited options. Unforgettable ski holidays."
+  },
+  "hotel": {
+    "residence": "RESIDENCE",
+    "price": "£{{price}} pp"
+  },
+  "tags": {
+    "city-center": "{{distance}} from City center",
+    "from-ski": "{{distance}} from ski"
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "declarationDir": ".",
+      "outDir": ".",
+      "strict": true
+    },
+    "exclude": ["node_modules"]
+  }
