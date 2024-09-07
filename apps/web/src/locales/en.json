@@ -1,6 +1,12 @@
 {
   "header": {
-    "title": "Unlimited options. Unforgettable ski holidays."
+    "title": "Unlimited options. Unforgettable ski holidays.",
+    "numberOfPeople": "{{number}} people",
+    "search": "Search"
+  },
+  "body": {
+    "title": "Select your ski trip",
+    "ski_options": "{{options}} ski trip options"
   },
   "hotel": {
     "residence": "RESIDENCE",

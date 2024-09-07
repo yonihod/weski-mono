@@ -12,12 +12,13 @@ for (const provider of providersJSON) {
   providers.push({
     endpoint: provider.endpoint,
     getHotels: async (query: Query) => {
+      console.log("Fetching hotels from:", { name: provider.name, query });
       const response = await fetch(provider.endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(query),
+        body: JSON.stringify({ query }),
       });
       const data = await response.json();
       return data as QueryResponse;

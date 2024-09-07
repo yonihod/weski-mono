@@ -19,7 +19,7 @@ const StarBar: React.FC<StarBarProps> = ({ rating }) => {
     return stars;
   };
 
-  return <div>{renderStars(parseInt(rating))}</div>;
+  return <div className="flex">{renderStars(parseInt(rating))}</div>;
 };
 
 export default React.memo(StarBar);

@@ -5,6 +5,7 @@ import StarBar from "./StarBar";
 import Tag from "./common/Tag";
 import { Ski } from "./icons";
 import { Accommodation } from "shared-types";
+import Divider from "./common/Divider";
 
 const Hotel: React.FC<Accommodation> = ({
   HotelName,
@@ -47,30 +48,35 @@ const Hotel: React.FC<Accommodation> = ({
   }, [HotelInfo.Position.Distances]);
 
   return (
-    <div className="flex md:flex-row flex-col w-full aspect-[3/1] bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+    <div className="flex my-2 md:flex-row flex-col w-full aspect-[3/1] bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
       <img
         className="w-1/3 object-cover"
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null;
+          currentTarget.src = PLACEHOLDER_HOTEL_IMAGE;
+        }}
         src={mainImageUrl}
         alt={HotelName}
-        // onError={handleImageError}
       />
       <div className="flex flex-col flex-1 p-4">
         <div className="flex gap-1 items-center">
           <span className="text-xxs text-gray-500 tracking-wide font-normal">
             {t("hotel.residence")}
           </span>
-          <span className="mt-[-6px]">
-            <StarBar rating={HotelInfo.Rating} />
-          </span>
         </div>
         <h3 className="text-lg font-semibold">{HotelName}</h3>
-
+        <span className="mt-[-6px]">
+          <StarBar rating={HotelInfo.Rating} />
+        </span>
         <div className="flex gap-2">
           {tags.map((tag, index) => (
             <Tag key={index} {...tag} />
           ))}
         </div>
-        <div className="text-red-500 font-semibold text-lg mt-auto ml-auto">
+        <div className="mt-auto">
+          <Divider className="my-4" />
+        </div>
+        <div className="text-red-500 font-semibold text-lg ml-auto">
           {t("hotel.price", {
             price: Math.round(parseInt(PricesInfo.AmountAfterTax)),
           })}
